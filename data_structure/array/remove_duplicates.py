@@ -4,7 +4,22 @@ def remove_duplicates(arr):
         raise ValueError("배열이 비어있습니다.")
     
     answer = [arr[0]]
-    for x in arr:
-        if not array_contains(answer, x):  # 이 부분을 recursive_contains로 바꿔도 OK
+    for x in arr[1:]:
+        if not x in answer:
             answer.append(x)
     return answer
+
+def remove_recursive(arr, idx=0, answer=None):
+    if answer is None:
+        answer = []
+
+    if not arr:
+        return []
+    
+    if idx == len(arr):
+        return answer
+    
+    if arr[idx] not in answer:
+        answer.append(arr[idx])
+
+    return remove_recursive(arr, idx+1, answer)
