@@ -10,6 +10,4 @@ def recursive_reverse(arr):
     if not arr:
         return []
     
-    return recursive_reverse(arr[1:]) + [arr[0]]
-
-print(recursive_reverse(["a", "b", "c"]))  # ['c', 'b', 'a']
+    return recursive_reverse(arr[1:]) + [arr[0]] # 리스트로 감싸는 이유는 리스트+리스트가 되어야 리스트끼리 합쳐지기 때문

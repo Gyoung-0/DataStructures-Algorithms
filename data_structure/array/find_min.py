@@ -9,7 +9,3 @@ def find_min(arr):
             min_val = x
 
     return min_val
-
-print(find_min([3, 1, 7, 2, 0]))  # Output: 0
-print(find_min([-5, -2, -8]))     # Output: -8
-print(find_min([]))               # Output: None

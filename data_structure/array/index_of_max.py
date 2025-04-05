@@ -10,4 +10,15 @@ def index_of_max(arr):
 
     return max_index
 
-print(index_of_max([1, 3, 2, 5, 4]))  # 결과: 3
+def recursive_max_index(arr, idx=0, max_idx=0):
+    if not arr:
+        return None
+    
+    if idx == len(arr):
+        return max_idx
+    
+    if arr[idx] > arr[max_idx]:
+        max_idx = idx
+
+    return recursive_max_index(arr,idx+1, max_idx)
+    
