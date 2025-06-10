@@ -45,3 +45,27 @@ class SinglyLinkedList:
             count += 1
             current = current.next
         return count
+    
+    def delete(self, index):
+        if index < 0:
+            raise ValueError("Index is higher than zero")
+        if self.head is None:
+            raise IndexError("none of deleting data")
+        if index >= self.list_count():
+            raise IndexError("Index is excessive range of list") 
+        
+        if index == 0:
+            self.head = self.head.next
+            return
+        
+        current = self.head
+        
+        count = 0
+        
+        while count != index-1:
+            current = current.next
+            count += 1
+            
+        current.next = current.next.next
+        
+        
