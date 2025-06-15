@@ -68,4 +68,19 @@ class SinglyLinkedList:
             
         current.next = current.next.next
         
+    def get(self, index):
+        if index < 0:
+            raise ValueError("index is higher than 0")
+        if self.head is None:
+            raise IndexError("list in empty")
+        if self.list_count() <= index:
+            raise ValueError("index is lower than maximum length of list")
+        
+        current = self.head
+        count = 0
+        while count != index:
+            current = current.next
+            count += 1
+        return current.value
+        
         
