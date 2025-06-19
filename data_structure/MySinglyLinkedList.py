@@ -84,3 +84,19 @@ class SinglyLinkedList:
         return current.value
         
         
+
+    def reverse(self):
+        if self.head == None:
+            raise ValueError("list in empty")
+        
+        # 1. 이전 노드, 현재 노드, 다음 노드
+        prev =  None
+        current = self.head
+
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+
+        self.head = prev
