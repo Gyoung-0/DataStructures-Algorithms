@@ -13,4 +13,3 @@ def binary_search(L, target):
             right = mid - 1 #왼쪽 탐색
     return -1 #값이 없을때
 
-

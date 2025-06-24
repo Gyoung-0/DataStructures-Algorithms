@@ -100,3 +100,16 @@ class SinglyLinkedList:
             current = next_node
 
         self.head = prev
+
+    def to_list(self):
+        if self.head == None:
+            return []
+        
+        result = []
+        current = self.head
+        while current:
+            result.append(current.value)
+            current = current.next
+
+        return result
+    
