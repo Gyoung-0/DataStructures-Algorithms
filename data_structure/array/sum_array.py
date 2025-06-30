@@ -6,3 +6,4 @@ def sum_array(arr):
         total += x
     return total
 
+    
