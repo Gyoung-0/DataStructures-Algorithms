@@ -113,3 +113,23 @@ class SinglyLinkedList:
 
         return result
     
+def merge_list(node1, node2):
+    dummy = Node(0)
+    tail = dummy
+
+    while node1 and node2:
+        if node1.value <= node2.value:
+            tail.next = node1
+            node1 = node1.next
+        else:
+            tail.next = node2
+            node2 = node2.next
+        tail = tail.next
+
+    if node1:
+        tail.next = node1
+    else:
+        tail.next = node2
+    
+    return dummy.next
+
